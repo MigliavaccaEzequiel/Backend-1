@@ -1,0 +1,30 @@
+[
+  {
+    "id": 2,
+    "status": true,
+    "title": "Especial",
+    "description": "Pizza con muza, jamon, morrones y aceitunas",
+    "code": "M",
+    "price": 7500,
+    "stock": 20,
+    "category": "Pizzas",
+    "thumbnails": [
+      "url_imagen1",
+      "url_imagen2"
+    ]
+  },
+  {
+    "id": 3,
+    "status": true,
+    "title": "Juanacho",
+    "description": "Sanguche con pan de pebete, jamon mayonesa y rodajas de tomate",
+    "code": "M",
+    "price": 5000,
+    "stock": 10,
+    "category": "Sanguches",
+    "thumbnails": [
+      "url_imagen1",
+      "url_imagen2"
+    ]
+  }
+]
