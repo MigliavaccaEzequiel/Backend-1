@@ -34,8 +34,8 @@ class ProductManager {
 
     async updateProduct(id, fields) {
         const products = await this.getProducts();
-        const index = products.findIndex(p => p.id === id);
-        if (index === -1) return null;
+        const i = products.findIndex(p => p.id === id);
+        if (i === -1) return null;
 
         const updatedProduct = {
             ...products[index],
@@ -43,7 +43,7 @@ class ProductManager {
             id: products[index].id // aseguramos que no se modifique el ID
         };
 
-        products[index] = updatedProduct;
+        products[i] = updatedProduct;
         await fs.writeFile(productsPath, JSON.stringify(products, null, 2));
         return updatedProduct;
     }

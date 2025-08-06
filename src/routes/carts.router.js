@@ -4,13 +4,16 @@ const CartManager = require("../managers/CartManager");
 const router = express.Router();
 const manager = new CartManager();
 
-// POST /api/carts
+router.get("/", async (req, res) => {
+    const carts = await manager.getCarts();
+    res.status(200).json(carts);
+});
+
 router.post("/", async (req, res) => {
     const newCart = await manager.createCart();
     res.status(201).json(newCart);
 });
 
-// GET /api/carts/:cid
 router.get("/:cid", async (req, res) => {
     const id = parseInt(req.params.cid);
     const cart = await manager.getCartById(id);
@@ -22,7 +25,6 @@ router.get("/:cid", async (req, res) => {
     res.status(200).json(cart);
 });
 
-// POST /api/carts/:cid/product/:pid
 router.post("/:cid/product/:pid", async (req, res) => {
     const cartId = parseInt(req.params.cid);
     const productId = parseInt(req.params.pid);

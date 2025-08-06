@@ -4,7 +4,6 @@ const ProductManager = require("../managers/ProductManager");
 const router = express.Router();
 const manager = new ProductManager();
 
-// GET /api/products
 router.get("/", async (req, res) => {
     const limit = parseInt(req.query.limit);
     const products = await manager.getProducts();
@@ -16,7 +15,6 @@ router.get("/", async (req, res) => {
     res.status(200).json(products);
 });
 
-// GET /api/products/:pid
 router.get("/:pid", async (req, res) => {
     const id = parseInt(req.params.pid);
     const product = await manager.getProductById(id);
@@ -28,7 +26,6 @@ router.get("/:pid", async (req, res) => {
     res.status(200).json(product);
 });
 
-// POST /api/products
 router.post("/", async (req, res) => {
     const { title, description, code, price, stock, category, thumbnails } = req.body;
 
@@ -40,7 +37,6 @@ router.post("/", async (req, res) => {
     res.status(201).json(newProduct);
 });
 
-// PUT /api/products/:pid
 router.put("/:pid", async (req, res) => {
     const id = parseInt(req.params.pid);
     const updateFields = req.body;
@@ -58,7 +54,6 @@ router.put("/:pid", async (req, res) => {
     res.status(200).json(updated);
 });
 
-// DELETE /api/products/:pid
 router.delete("/:pid", async (req, res) => {
     const id = parseInt(req.params.pid);
     const deleted = await manager.deleteProduct(id);

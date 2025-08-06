@@ -6,9 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ezequiel Migliavacca",
   "license": "ISC",
-  "description": "",
+  "description": "Servidor con Express - Backend Coderhouse",
   "dependencies": {
     "express": "^5.1.0"
   }
