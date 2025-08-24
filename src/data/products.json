@@ -26,5 +26,19 @@
       "url_imagen1",
       "url_imagen2"
     ]
+  },
+  {
+    "id": 4,
+    "status": true,
+    "title": "Cerveza",
+    "description": "Cerveza Brahma de 1lt",
+    "code": "BL",
+    "price": 3500,
+    "stock": 20,
+    "category": "Bebidas",
+    "thumbnails": [
+      "url_imagen1",
+      "url_imagen2"
+    ]
   }
 ]
