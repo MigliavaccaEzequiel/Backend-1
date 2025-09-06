@@ -34,18 +34,33 @@ const serverSocket = new Server(serverHTTP)
 serverSocket.on("connection", async (socket) => {
   console.log("Cliente conectado");
 
-  const products = await pm.getProducts()
-  socket.emit("updateProducts", products)
+  try {
+    const products = await pm.getProducts()
+    socket.emit("updateProducts", products)    
+  } catch (error) {
+    console.error("Error al enviar productos iniciales:", error.message);
+    socket.emit("error", { message: "No se pudieron cargar los productos" });
+  }
 
   socket.on("newProduct", async (product) => {
-    await pm.addProduct(product)
-    const products = await pm.getProducts()
-    serverSocket.emit("updateProducts", products);
+    try {
+      await pm.addProduct(product)
+      const products = await pm.getProducts()
+      serverSocket.emit("updateProducts", products);      
+    } catch (error) {
+      console.error("Error al agregar producto vía socket:", error.message);
+      socket.emit("error", { message: error.message });
+    }
   });
 
   socket.on("deleteProduct", async (id) => {
-    await pm.deleteProduct(id)
-    const products = await pm.getProducts()
-    serverSocket.emit("updateProducts", products);
+    try {
+      await pm.deleteProduct(id)
+      const products = await pm.getProducts()
+      serverSocket.emit("updateProducts", products);      
+    } catch (error) {
+      console.error("Error al eliminar producto vía socket:", error.message);
+      socket.emit("error", { message: error.message });
+    }
   });
 });

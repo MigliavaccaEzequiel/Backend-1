@@ -1,24 +1,10 @@
 [
   {
-    "id": 2,
-    "status": true,
-    "title": "Especial",
-    "description": "Pizza con muza, jamon, morrones y aceitunas",
-    "code": "M",
-    "price": 7500,
-    "stock": 20,
-    "category": "Pizzas",
-    "thumbnails": [
-      "url_imagen1",
-      "url_imagen2"
-    ]
-  },
-  {
     "id": 3,
     "status": true,
     "title": "Juanacho",
     "description": "Sanguche con pan de pebete, jamon mayonesa y rodajas de tomate",
-    "code": "M",
+    "code": "J",
     "price": 5000,
     "stock": 10,
     "category": "Sanguches",
@@ -40,5 +26,27 @@
       "url_imagen1",
       "url_imagen2"
     ]
+  },
+  {
+    "id": "1757171627211",
+    "status": true,
+    "title": "Muzzarella",
+    "description": "Pizza de muzzarella",
+    "code": "M",
+    "price": 6500,
+    "stock": 10,
+    "category": "Pizzas",
+    "thumbnails": "No hay"
+  },
+  {
+    "id": "1757172402671",
+    "status": true,
+    "title": "Especial",
+    "description": "Pizza con muzza, jamon, morron y aceitunas",
+    "code": "E",
+    "price": 7500,
+    "stock": 10,
+    "category": "Pizzas",
+    "thumbnails": "No hay"
   }
 ]
