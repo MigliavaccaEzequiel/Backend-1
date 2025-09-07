@@ -1,8 +1,8 @@
-const ProductManager = require('../managers/ProductManager.js')
+const ProductManager = require('../managers/ProductManagerMongo.js')
 const Router=require('express').Router;
 const router=Router()
 
-const pm=new ProductManager("./src/data/products.json")
+const pm=new ProductManager() //("./src/data/products.json")
 
 router.get('/products', async (req, res)=>{
     try {

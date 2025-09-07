@@ -36,7 +36,7 @@ class ProductManager {
             }
 
             const newProduct = {
-                id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
+                //id: products.length > 0 ? products[products.length - 1].id + 1 : 1,
                 status: true,
                 ...productData
             };
@@ -78,6 +78,7 @@ class ProductManager {
             if (products.length === filtered.length) return false;
     
             await fs.writeFile(productsPath, JSON.stringify(filtered, null, 2));
+            console.log(`Producto eliminado`)
             return true;            
         } catch (error) {
             throw new Error("Error al eliminar el producto: " + error.message);

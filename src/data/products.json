@@ -48,5 +48,16 @@
     "stock": 10,
     "category": "Pizzas",
     "thumbnails": "No hay"
+  },
+  {
+    "id": "1757262612904",
+    "status": true,
+    "title": "Napolitana",
+    "description": "Pizza de muzzarella con rodajas de tomate",
+    "code": "N",
+    "price": 7000,
+    "stock": 10,
+    "category": "Pizzas",
+    "thumbnails": "No hay"
   }
 ]

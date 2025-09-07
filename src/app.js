@@ -3,8 +3,10 @@ const PORT=8080
 const app=express()
 const {Server} =require("socket.io")
 const {engine} =require("express-handlebars")
-const ProductManager = require("./managers/ProductManager")
-const pm = new ProductManager("./src/data/products.json")
+const ProductManager = require("./managers/ProductManagerMongo")
+const pm = new ProductManager() //("./src/data/products.json")
+const mongoose = require("mongoose")
+const conectarDB = require("./config/db")
 
 app.engine("hbs", engine({extname:"hbs"}))
 app.set("view engine", "hbs")
@@ -13,6 +15,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static ("./src/public"))
 
+conectarDB(
+  "mongodb+srv://MigliavaccaEzequiel:Emin3mToy@cluster0.p8r2cxn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "dbNapolesPrueba01"
+)
 const productsRouter = require("./routes/products.router")
 const cartsRouter = require("./routes/carts.router")
 const vistasRouter = require("./routes/views.router")
@@ -22,11 +28,11 @@ app.use("/api/carts", cartsRouter)
 app.use("/", vistasRouter)
 
 app.get("/", (req, res)=>{
-    res.send("Bienvenido al server.")
+  res.send("Bienvenido al server.")
 })
 
 const serverHTTP = app.listen(PORT, ()=>{
-    console.log(`Server online en puerto ${PORT}`)
+  console.log(`Server online en puerto ${PORT}`)
 })
 
 const serverSocket = new Server(serverHTTP)

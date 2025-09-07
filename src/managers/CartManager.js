@@ -1,6 +1,6 @@
 const fs = require("fs").promises;
 const path = require("path");
-const ProductManager = require("./ProductManager");
+const ProductManager = require("./ProductManagerMongo");
 const productManager = new ProductManager();
 
 const cartsPath = path.join(__dirname, "../data/carts.json");

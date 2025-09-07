@@ -1,5 +1,5 @@
 const express = require("express");
-const ProductManager = require("../managers/ProductManager");
+const ProductManager = require("../managers/ProductManagerMongo");
 
 const router = express.Router();
 const manager = new ProductManager();
@@ -46,6 +46,7 @@ router.post("/", async (req, res) => {
 
         const newProduct = await manager.addProduct({ title, description, code, price, stock, category, thumbnails });
         res.status(201).json(newProduct);
+        console.log(req.body)
     } catch (error) {
         console.error("Error al crear el producto:", error.message);
         res.status(500).json({ error: "No se pudo crear el producto" });

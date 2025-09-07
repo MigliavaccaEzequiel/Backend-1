@@ -8,7 +8,7 @@ socket.on("updateProducts", (products) => {
   productsList.innerHTML = "";
   products.forEach((p) => {
     const li = document.createElement("li");
-    li.textContent = `${p.id} // ${p.code} - ${p.title} - $${p.price}`;
+    li.textContent = `${p._id} // ${p.code} - ${p.title} - $${p.price}`;
     productsList.appendChild(li);
   });
 });
@@ -24,7 +24,7 @@ productForm.addEventListener("submit", (e) => {
   const thumbnails = document.getElementById("thumbnails").value;
 
   socket.emit("newProduct", {
-    id: Date.now().toString(),
+    //id: Date.now().toString(),
     title,
     description,
     code,
