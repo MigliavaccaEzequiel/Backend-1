@@ -1,0 +1,15 @@
+<h1>{{product.title}}</h1>
+
+{{#if product.thumbnail}}
+  <img src="{{product.thumbnail}}" alt="{{product.title}}" width="300">
+{{else}}
+  <p>[No hay imagen disponible]</p>
+{{/if}}
+
+<p><strong>Descripción:</strong> {{product.description}}</p>
+<p><strong>Precio:</strong> ${{product.price}}</p>
+<p><strong>Stock:</strong> {{product.stock}}</p>
+
+<a href="/home" class="btn btn-secondary">Volver al listado</a>
+
+<button onclick="addToCart('{{product._id}}')">Agregar al carrito</button>

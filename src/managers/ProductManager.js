@@ -1,7 +1,7 @@
-const fs = require("fs").promises;
-const path = require("path");
+const fs = require("fs").promises
+const path = require("path")
 
-const productsPath = path.join(__dirname, "../data/products.json");
+const productsPath = path.join(__dirname, "../data/products.json")
 
 class ProductManager {
     async getProducts() {
@@ -15,10 +15,10 @@ class ProductManager {
 
     async getProductById(id) {
         try {
-            const products = await this.getProducts();
-            return products.find(p => p.id === id) || null;
+            const products = await this.getProducts()
+            return products.find(p => p.id === id) || null
         } catch (error) {
-            throw new Error("Error al obtener el producto: " + error.message);
+            throw new Error("Error al obtener el producto: " + error.message)
         }
     }
 

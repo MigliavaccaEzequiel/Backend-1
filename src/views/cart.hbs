@@ -1,0 +1,23 @@
+<h2>Carrito de compras</h2>
+
+{{#if cart.products.length}}
+  <ul>
+    {{#each cart.products}}
+      <li>
+        <strong>{{this.product.title}}</strong>  
+        - ${{this.product.price}}  
+        - Cantidad: {{this.quantity}}
+
+        <button onclick="updateQuantity('{{../cart._id}}','{{this.product._id}}','add')">+</button>
+        <button onclick="updateQuantity('{{../cart._id}}','{{this.product._id}}','subtract')">-</button>
+        <button onclick="removeFromCart('{{../cart._id}}','{{this.product._id}}')">Eliminar</button>
+      </li>
+    {{/each}}
+  </ul>
+
+  <h3>Total: ${{total}}</h3>
+{{else}}
+  <p>Tu carrito está vacío</p>
+{{/if}}
+
+<script src="/js/cart.js"></script>

@@ -1,10 +1,15 @@
 <h1>Nápoles - Productos en tiempo real</h1>
 
 <hr>
-
+<h2>Productos</h2>
 <ul id="productsList"></ul>
 
-<h2>Agregar producto</h2>
+<h2>Agregar producto a un carrito</h2>
+<select id="cartSelect">
+  <option value="">Selecciona un carrito</option>
+</select>
+
+<h2>Crear producto</h2>
 <form id="productForm">
   <input type="text" id="title" placeholder="Título" required><br>
   <input type="text" id="description" placeholder="Descripcion" required><br>
@@ -23,4 +28,4 @@
 </form>
 
 <script src="/socket.io/socket.io.js"></script>
-<script src="/js/realtime.js"></script>
+<script src="/js/realtimeProducts.js"></script>
